@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-CRAIGs::Application.load_tasks
+Craigs::Application.load_tasks
