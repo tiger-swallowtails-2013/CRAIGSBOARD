@@ -5,17 +5,28 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-
 gem 'yaml_db'
 gem 'pg'
+gem 'thin' #makes faster web server
 
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'faker'
+end
 
+group :test do
+  gem 'capybara'
+  gem 'selenium-webdriver' # drive Firefox to run JS tests
+  #gem 'capybara-webkit' # drive headless webkit to run JS tests
+  gem 'guard-rspec'
+  gem 'launchy'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
