@@ -1,3 +1,3 @@
-module TopicHelper
+module TopicsHelper
 
 end

@@ -5,12 +5,21 @@ class TopicsController < ApplicationController
   end
 
   def show
-    # @topic = Topic.find(params[0])
-    puts params
+    @topic = Topic.find(params[:id])
+
   end
 
   def create
+    @topic = Topic.new(params[:topic])
 
+    if @topic.save
+      redirect_to @topic
+    else
+      render 'new'
+    end
+  end
+
+  def new
   end
 
 end
