@@ -1,0 +1,8 @@
+<%= @topic.title %>
+<%= @topic.body %>
+<%= @topic.author %>
+<%= @topic.timestamp %>
+
+<% Post.where(:topic_id = @topic.id).each do |post| %>
+  <%= post.body %>
+<% end %>
