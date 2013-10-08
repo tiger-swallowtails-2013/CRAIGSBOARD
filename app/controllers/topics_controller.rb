@@ -12,8 +12,8 @@ class TopicsController < ApplicationController
   def create
     @topic = Topic.new(params[:topic])
 
-    @post = Post.new(params[:post])
-    @post[:topic_id] =
+    #@post = Post.new(params[:post])
+    #@post[:topic_id] = header/#
 
     if @topic.save
       redirect_to @topic
