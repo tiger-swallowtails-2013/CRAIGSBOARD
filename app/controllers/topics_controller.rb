@@ -6,14 +6,10 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
-
   end
 
   def create
     @topic = Topic.new(params[:topic])
-
-    #@post = Post.new(params[:post])
-    #@post[:topic_id] = header/#
 
     if @topic.save
       redirect_to @topic
@@ -23,6 +19,7 @@ class TopicsController < ApplicationController
   end
 
   def new
+    @topic = Topic.new
   end
 
 end

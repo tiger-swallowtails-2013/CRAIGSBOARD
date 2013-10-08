@@ -1,5 +1,17 @@
 require "spec_helper"
 
-describe TopicsModel, :type => :model  do # don't need :type >... in 4.0
+# psedo-code
+# describe Topics (model)
+# it "has a valid factory"
+# it "in invalide without title"
 
-  describe ""
+describe Topic do
+  it "has a valid factory" do
+    FactoryGirl.create(:topic).should be_valid
+  end
+  it "is invalid without title"
+
+end
+
+
+
