@@ -1,4 +1,6 @@
 class Topic < ActiveRecord::Base
-has_many :posts
-attr_accessible :title, :author, :body
+  attr_accessible :title, :author, :body
+
+  has_many :posts
+  validates :title, presence: true
 end
