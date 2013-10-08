@@ -1,0 +1,12 @@
+<h1>Topics</h1>
+
+<div class="topics">
+  <% @topics.each do |topic| %>
+    <%= link_to topic.title, topic %><br>
+  <% end %>
+</div>
+
+<br>
+<div class="new_topic">
+<%= link_to "New topic", new_topic_path %>
+</div>
