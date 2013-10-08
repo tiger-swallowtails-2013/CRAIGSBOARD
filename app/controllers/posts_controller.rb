@@ -20,6 +20,10 @@ class PostsController < ApplicationController
 
   end
 
+  def posts
+    @posts = Post.all
+  end
+
 
 
 
