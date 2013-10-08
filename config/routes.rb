@@ -3,7 +3,7 @@ Craigs::Application.routes.draw do
   resources :topics
   resources :posts
 
-  root :to => 'topic#index'
+  root :to => 'topics#index'
 
 
 
