@@ -6,3 +6,7 @@
 <% Post.where(topic_id: @topic.id).each do |post| %>
 <%= post.body %>
 <% end %>
+
+<div class="post">
+  <%= link_to "Post", topic_posts_path(@topic) %>
+</div>

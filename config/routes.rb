@@ -10,6 +10,11 @@ Craigs::Application.routes.draw do
 
   root :to => 'topics#index'
 
+# Sample resource route with sub-resources:
+    resources :topics do
+      resources :posts
+    end
+
 
 
   # The priority is based upon order of creation:
