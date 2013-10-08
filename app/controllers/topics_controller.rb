@@ -12,6 +12,9 @@ class TopicsController < ApplicationController
   def create
     @topic = Topic.new(params[:topic])
 
+    @post = Post.new(params[:post])
+    @post[:topic_id] =
+
     if @topic.save
       redirect_to @topic
     else
