@@ -9,16 +9,8 @@ gem 'yaml_db'
 gem 'pg'
 gem 'thin' #makes faster web server
 
-group :test, :development do
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
-  gem 'faker'
-end
 
 group :test do
-  gem 'capybara'
-  gem 'selenium-webdriver' # drive Firefox to run JS tests
-  #gem 'capybara-webkit' # drive headless webkit to run JS tests
   gem 'guard-rspec'
   gem 'launchy'
 end
@@ -39,14 +31,14 @@ gem 'jquery-rails'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'shoulda'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'faker'
+  gem 'database_cleaner'
+end
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
+gem 'debugger'
