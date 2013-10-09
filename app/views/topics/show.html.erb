@@ -1,12 +1,18 @@
-<%= @topic.title %><br>
-<%= @topic.body %><br>
-<%= @topic.author %><br>
-<%= @topic.created_at %><br>
+<div>
+<h3>Showing Topic <%= @topic.id %></h3>
+<strong>Title: </strong><%= @topic.title %><br>
+<strong>Body: </strong><%= @topic.body %><br>
+<strong>Author: </strong><%= @topic.author %><br>
+<strong>Created: </strong><%= @topic.created_at %><br>
+</div>
 
+<div>
+<strong>Posts on this topic:</strong>
 <% @topic.posts.each do |post| %>
-<%= post.body %>
+  <%= post.body %>
 <% end %>
+</div>
 
 <div class="post">
-  <%= link_to "Post", new_post_path %>
+  <%= link_to "Add new post on this topic", new_post_path  %>
 </div>

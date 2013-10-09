@@ -5,11 +5,12 @@ class PostsController < ApplicationController
     @posts = @topic.posts
   end
 
-
   def create
     @post = Post.new(params[:post])
+    p params[:topic_id]
     if @post.save
-      redirect_to @post
+      @topic = Topic.find(params[:post][:topic_id])
+      redirect_to @topic
     else
       render :new
     end
