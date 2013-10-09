@@ -3,10 +3,10 @@
 <%= @topic.author %><br>
 <%= @topic.created_at %><br>
 
-<% Post.where(topic_id: @topic.id).each do |post| %>
+<% @topic.posts.each do |post| %>
 <%= post.body %>
 <% end %>
 
 <div class="post">
-  <%= link_to "Post", topic_posts_path(@topic) %>
+  <%= link_to "Post", new_post_path %>
 </div>

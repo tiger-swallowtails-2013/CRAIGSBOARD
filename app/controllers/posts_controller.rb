@@ -7,9 +7,12 @@ class PostsController < ApplicationController
 
 
   def create
-
-    @post = Post.create(params[:post])
-    redirect_to post_path(@post)
+    @post = Post.new(params[:post])
+    if @post.save
+      redirect_to @post
+    else
+      render :new
+    end
   end
 
   def show
@@ -17,14 +20,7 @@ class PostsController < ApplicationController
   end
 
   def new
-
+    @post = Post.new
   end
-
-  def posts
-    @posts = Post.all
-  end
-
-
-
 
 end

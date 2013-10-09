@@ -1,14 +1,14 @@
 Craigs::Application.routes.draw do
 
   resources :topics
-  resources :posts
+  resources :posts, only: [:show, :index, :new, :create]
 
   root :to => 'topics#index'
 
-# Sample resource route with sub-resources:
-    resources :topics do
-      resources :posts
-    end
+# # Sample resource route with sub-resources:
+  # resources :topics do
+  #   resources :posts, only: [:index, :new]
+  # end
 
 
 
