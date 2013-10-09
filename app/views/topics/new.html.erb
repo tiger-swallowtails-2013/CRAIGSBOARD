@@ -1,6 +1,6 @@
-<%= form_for :topic, url: topics_path do |f| %>
-  Title: <%= f.text_field :title %><br />
-  Body : <%= f.text_area :body %><br />
-  Author : <%= f.text_field :author %><br />
+<%= form_for @topic do |f| %>
+  <%= f.label :title %><%= f.text_field :title %><%= @topic.errors[:title].join(',') %><br />
+  <%= f.label :body %><%= f.text_area :body %><br />
+  <%= f.label :author %><%= f.text_field :author %><br />
   <%= f.submit %>
 <% end %>
