@@ -6,6 +6,10 @@ feature "Create topic" do
     visit new_topic_path
   end
 
+  after do
+    Topic.destroy_all
+  end
+
   scenario "visiting the create topic page" do
     expect(page).to have_css("input#topic_title")
     expect(page).to have_content("Title")
@@ -30,4 +34,5 @@ feature "Create topic" do
       click_on 'Create Topic'
     }.to change(Topic, :count).by(1)
   end
+
 end
