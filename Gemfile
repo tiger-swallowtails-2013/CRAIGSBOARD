@@ -2,9 +2,18 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
+# Bundle edge Rails instead:
+# gem 'rails', :git => 'git://github.com/rails/rails.git'
+
 gem 'yaml_db'
 gem 'pg'
-gem 'thin'
+gem 'thin' #makes faster web server
+
+
+group :test do
+  gem 'guard-rspec'
+  gem 'launchy'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -28,6 +37,8 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'faker'
+  gem 'database_cleaner'
 end
 
 gem 'debugger'

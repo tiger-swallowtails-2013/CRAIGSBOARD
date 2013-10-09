@@ -1,7 +1,12 @@
 Craigs::Application.routes.draw do
 
-  resources :topics
   resources :posts, only: [:show, :index, :new, :create]
+  resources :topics, only: [:new, :index, :show, :create]
+  # ... shorthand for ...
+  #get '/topics/new', to: 'topics#new', as: :new_topic
+  # ... also shorthand for ...
+  #match '/topics/new', to: 'topics#new', as: :new_topic, via: [:get]
+
 
   root :to => 'topics#index'
 
